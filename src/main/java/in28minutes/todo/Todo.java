@@ -1,4 +1,4 @@
-package webapp;
+package in28minutes.todo;
 
 public class Todo {
 

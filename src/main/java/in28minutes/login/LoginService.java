@@ -1,4 +1,4 @@
-package webapp;
+package in28minutes.login;
 
 public class LoginService {
     public boolean validateUser(String user, String password) {
