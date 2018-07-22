@@ -1,10 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<jsp:useBean id="name" type="java.lang.String" scope="request"/>
-<jsp:useBean id="password" type="java.lang.String" scope="request"/>
+<jsp:useBean id="errorMessage" class="java.lang.String" scope="request"/>
+
 <html>
 <head>
     <title>Yahoo!!</title>
 </head>
 <body>
-My First JSP!!! My name is ${name} and password is ${password}
+<p><font color="red">${errorMessage}</font></p>
+<form action="/login.do" method="POST">
+    Name : <input name="name" type="text" />
+    Password : <input name="password" type="password" />
+    <input type="submit" />
+</form>
+</body>
 </html>
