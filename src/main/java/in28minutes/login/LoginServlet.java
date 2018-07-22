@@ -1,7 +1,5 @@
 package in28minutes.login;
 
-import in28minutes.todo.TodoService;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
-    private LoginService service = new LoginService();
-    private TodoService todoService = new TodoService();
+	private static final long serialVersionUID = 1L;
+	private LoginService service = new LoginService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,14 +29,12 @@ public class LoginServlet extends HttpServlet {
 
         boolean isValidUser = service.validateUser(name, password);
 
-        if (isValidUser) {
-            request.setAttribute("name", name);
-            request.setAttribute("todos", todoService.retrieveTodos());
-            request.getRequestDispatcher("/views/welcome.jsp").forward(request, response);
-        } else {
-            request.setAttribute("errorMessage", "Invalid Credentials!!");
-            request.getRequestDispatcher("/views/login.jsp").forward(request, response);
-        }
-    }
+		if (isValidUser) {
+			response.sendRedirect("/todo.do");
+		} else {
+			request.setAttribute("errorMessage", "Invalid Credentials!!");
+			request.getRequestDispatcher("/views/login.jsp").forward(request, response);
+		}
+	}
 
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TodoService {
-    private static List<Todo> todos = new ArrayList();
+	private static List<Todo> todos = new ArrayList<Todo>();
 
     static {
         todos.add(new Todo("Learn Web Application"));
