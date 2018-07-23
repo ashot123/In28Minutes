@@ -1,5 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<jsp:useBean id="errorMessage" class="java.lang.String" scope="request"/><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +25,7 @@
 
     <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="/todo.do">Todos</a></li>
+        <li><a href="/list-todos.do">Todos</a></li>
         <li><a href="http://www.in28minutes.com">In28Minutes</a></li>
     </ul>
 
