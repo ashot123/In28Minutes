@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<jsp:useBean id="errorMessage" class="java.lang.String" scope="request"/>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:useBean id="errorMessage" class="java.lang.String" scope="request"/><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,12 +37,19 @@
 </nav>
 
 <div class="container">
-    <H1>Heading</H1>
-    Body of the Page
+    <form action="/login.do" method="post">
+        <p>
+            <font color="red">${errorMessage}</font>
+        </p>
+        Name: <input type="text" name="name" /> Password:<input
+            type="password" name="password" /> <input type="submit"
+                                                      value="Login" />
+    </form>
+
 </div>
 
 <footer class="footer">
-    <p>footer content</p>
+    <div>footer content</div>
 </footer>
 
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>

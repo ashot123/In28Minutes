@@ -1,13 +1,12 @@
-package in28minutes.todo;
+package com.in28minutes.todo;
 
 public class Todo {
+    private String name;
 
     public Todo(String name) {
         super();
         this.name = name;
     }
-
-    private String name;
 
     public String getName() {
         return name;
@@ -19,7 +18,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo [name=" + name + "]";
+        return String.format("Todo [name=%s]", name);
     }
 
     @Override
@@ -36,15 +35,15 @@ public class Todo {
             return true;
         if (obj == null)
             return false;
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
             return false;
-        }
         Todo other = (Todo) obj;
         if (name == null) {
-            return other.name == null;
-        } else {
-            return name.equals(other.name);
-        }
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
     }
 
 }
